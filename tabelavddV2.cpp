@@ -1,17 +1,12 @@
 #include <iostream>
-#include <cmath>
-#include <vector>
-
 #define T 1
 #define F 0
 
 class Operation{
     private:
-
+        char *preposition[5] = {"n","c","d","i","b"};
+        //struct
     public:
-        void var();
-        void pushV();
-        void pushA();
         void operation();
         void conjunction();
         void disjunction();
@@ -21,65 +16,42 @@ class Operation{
 }
 
 int main(){
-
-    int number, i = 0;
-    char var;
-
-    std::cout<<"Number of the variables: ";
-    std::cin<<number;
+    int i = 0, number;
+    char *str[10];
+    std::cout <<"Type of the number variables between 1 and 3";
+    std::cin >>number;
     do{
-        std::cout <<"Type it the variable: ";
-        std::cin >>var;
-        Operation::pushV(var,number)
-        Operation::pushA(var);
+        std::cout <<"Type it variable string: ";
+        std::cin >>str[i];
         i++;
-    }while(i<= number);
-   
+    }while(i < number);
+
+    pushVar(str [],number);
+    pushT(number);
     Operation::true_table();
     
 
 }
+void Operation::pushVar(char str [], int number){
+    char *variable = new char[number];
 
-
-void Operation::pushV(char a,int n){    
-    int i = 0;
-
-    if(i <= n){
-    Operation::variable[i] = a;
-    i++;
-    }else{
-        std::cout <<"ERROR!!";
+    for(i = 0; i < number ;i++){
+        variable[i] = str[i];
+        cout << variable[i] <<";"; //test
     }
-    
+    cout <<end1;
 }
+void Operation::pushT(int coluns){
+    int line = 2**coluns;
+    int *cont = new int[line][coluns];
 
-void Operation::pushA(int n){
-    int row, coluns;
-
-    coluns = n
-    row = 2**n;
-
-    int **values = new int*[row];
-    for(int i = 0; i < row; ++i) {
-        values[i] = new int[coluns];
-    }
-
-    for(int i = 0; i < row; ++i) {
-        for(int j = 0; j < coluns; ++j) {
-            if(coluns == 1){
-                if(j == 0){
-                    values[i][j] = F;
-                }else{
-                    values[i][j] = T;
-                }
-            }else if(coluns == 2){
-                if()
-            }
-            cout << setw(2) << values[i][j] << "; ";
+    for(i = 0; i <line; i++){
+        for(j = 0, j< coluns, j++){
+            cont[i][j] = ;
         }
-        cout << endl
     }
 }
+
 
 void Operation::operation(){
     Operation op;     
@@ -103,13 +75,13 @@ void Operation::disjunction(){
         if((a[i] || b[i]) == T){
             Operation::result[i][1] = T;
         }else{
-            Operation::result[i][1] =F;
+            Operation::result[i][1] = F;
         }
     }
 }
 void Operation::implication(){
     for(i = 0; i < 4 ; i++){
-        if((b[i]== T || (a[i] || b[i] == F))){
+        if((b[i]== T || (a[i] || b[i] == F)){
             Operation::result[i][2]= T;
         }else{
             Operation::result[i][2] = F;
@@ -125,7 +97,6 @@ void Operation::bicondicional(){
         }
     }
 }
-
 void Operation::negation(){
     Operation op;
 
@@ -142,5 +113,12 @@ void Operation::negation(){
 
 void Operation::true_table(){
     Operation op;
+
+    int i = sizeof(variable);
+    
+
+    printf(" |Conjunction | Disjunction | Implication | Binomial\n");
+    printf("|"<<op.a[1]);
+    printf(""<<op.b[0]);
 
 }
