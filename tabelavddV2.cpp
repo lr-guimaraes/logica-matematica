@@ -1,30 +1,41 @@
 #include <iostream>
+#include <string>
 #define T 1
 #define F 0
 
 class Operation{
     private:
-        char *preposition[5] = {"n","c","d","i","b"}; //straighten
-        int result[10][0]; //straighten
+        char preposition[5] = {"n","c","d","i","b"}; //straighten
+        int result[10][5]; //straighten
   
     public:
         void pushVar(char [], int);
         void pushT(int);
+
         void operation();
         void conjunction();
         void disjunction();
         void implication();
+        void not();
+
         void binomial();
         void true_table();       
+
+        struct analyse{
+            int before;
+            int next;
+        };
 };
 
 int main(){
     Operation op;
-    int i = 0, number;
-    char str[10]; //straighten
+    int i = 0,
+    int number;   
 
     std::cout <<"Type of the number variables: ";
-    std::cin >>number;
+    std::cin >>number;  
+
+    char str[number]; //straighten
     do{
         std::cout <<"Type it variable string: ";
         std::cin >>str[i];
@@ -32,10 +43,7 @@ int main(){
     }while(i < number);
     op.pushVar(str, number);
     op.pushT(number);
-
     op.true_table();
-    
-
 }
 
 void Operation::pushVar(char str[], int number){
@@ -49,15 +57,15 @@ void Operation::pushVar(char str[], int number){
 }
 
 void Operation::pushT(int number){
-    int line = 2^number;
-    int **cont = new int[line][number]; //straighten
+    int line = pow(2,number);
+    int **cont = new int[line][number]; //straighten  smartpointer
     int k = 0;
 
     for(int i = 0; i <line; i++){
-        for(int j = 0; j<  number; j++){
-            if(k <= (2^j)/2){
+        for(int j = 0; j < number; j++){
+            if(k <= (pow(2,j))/2){
                 cont[i][j] = F;
-            }else if((k > (2^j)/2)){
+            }else if((k > (pow(2,j))/2)){ //straighten
                 cont[i][j] = T;
             }
             k++;
@@ -66,24 +74,49 @@ void Operation::pushT(int number){
     }
 }
 
-
-void Operation::operation(){
-    Operation op;     
-    op.conjunction();
-    op.disjunction();
-    op.binomial();
-}
-
 void Operation::conjunction(){
-    for(int i = 0; i < sizeof(Operation::cont); i++){
-        if((Operation::cont[i][j] && (Operation::cont[i][j])) == T){
-            Operation::result[i][0] = T;
+    //int *aux[][][];
+    int x; 
+    int y; 
+    int k = 0;
+
+    do{ 
+        if(sizeof(Operation::aux) == 0){ //first push
+            for(int i = 0; i < sizeof(Operation::cont); i++){
+                for(int i)
+                if((Operation::cont[i][0] && Operation::cont[i][1]) == T){
+                    analyze->next = T;
+                    x = T;
+                }else{
+                    analtyze->next = F;
+                    x = F;
+                }
+            }
         }else{
-            Operation::result[i][0] =F;
+            for(int j = 1; < ; j++){
+                if((x && Operation::cont[i][j+1]) == T){
+                    x = T;
+                }else{
+                    x = F;
+                }
+            }
         }
+
+        k++
+    }while(k < (sizeof(Operation::aux) - 1));
+    
+    do{
+        aux2[i][j] = ;
+    }while(k > 0);
+}
+void Operation::not(int number){
+    for(i = 0; i < number; i++){
+        if(resul[i][]){
+            
+        } 
     }
 }
-/*
+/*d
 void Operation::disjunction(){
     for(int i = 0; i < sizeof(Operation::cont) ; i++){
         if((a[i] || b[i]) == T){
@@ -124,6 +157,15 @@ void Operation::negation(){
         }
     }
 }
+'
+void Operation::operation(){
+    Operation op;     
+    op.conjunction();
+    op.disjunction();
+    op.implication();
+    op.binomial();
+}
+
 
 void Operation::true_table(){
     Operation op;
