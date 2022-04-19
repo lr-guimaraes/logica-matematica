@@ -1,19 +1,23 @@
 # logica-matematica
 
-## Duas variaveis 
+## Entrada
+ - As proposições devem conter parenteses no inicio
+ - São aceitas preposições no formato (A prep B) ou ((A prep1 B)prep C)
 
+## Duas variaveis 
 ### Conjunção
     Type of the number variables between 1 and 3: 2
     Type it variable: p
     Type it variable: q
-    |================|========|
+     =========================
     |  PREPOSITIONS  | INPUTS |
     |================|========|
     |Conjuction      |   ^    |
-    |dijuntion       |   v    |
+    |Dijuntion       |   v    |
     |Implication     |   >    |
-    |biconditional   |   b    |
-    |================|========|
+    |Biconditional   |   b    |
+    |Negation        |   ~    |
+     ========================= 
     Type the expresson: (p^q)  
     Exit: Truth table 2^2
     ==================   
@@ -29,14 +33,15 @@
     Type of the number variables between 1 and 3: 2
     Type it variable: p
     Type it variable: q
-    |================|========|
+     =========================
     |  PREPOSITIONS  | INPUTS |
     |================|========|
     |Conjuction      |   ^    |
-    |dijuntion       |   v    |
+    |Dijuntion       |   v    |
     |Implication     |   >    |
-    |biconditional   |   b    |
-    |================|========|
+    |Biconditional   |   b    |
+    |Negation        |   ~    |
+     ========================= 
     Type the expresson: (pvq)  
     Exit: Truth table 2^2
     ==================   
@@ -52,14 +57,15 @@
     Type of the number variables between 1 and 3: 2
     Type it variable: p
     Type it variable: q
-    |================|========|
+     =========================
     |  PREPOSITIONS  | INPUTS |
     |================|========|
     |Conjuction      |   ^    |
-    |dijuntion       |   v    |
+    |Dijuntion       |   v    |
     |Implication     |   >    |
-    |biconditional   |   b    |
-    |================|========|
+    |Biconditional   |   b    |
+    |Negation        |   ~    |
+     ========================= 
     Type the expresson: (p>q)
     Exit: Truth table 2^2
     ==================
@@ -76,14 +82,15 @@
     Type of the number variables between 1 and 3: 2
     Type it variable: p
     Type it variable: q
-    |================|========|
+     =========================
     |  PREPOSITIONS  | INPUTS |
     |================|========|
     |Conjuction      |   ^    |
-    |dijuntion       |   v    |
+    |Dijuntion       |   v    |
     |Implication     |   >    |
-    |biconditional   |   b    |
-    |================|========|
+    |Biconditional   |   b    |
+    |Negation        |   ~    |
+     ========================= 
     Type the expresson: (pbq)
     Exit: Truth table 2^2
     ==================
@@ -99,14 +106,15 @@
     Type of the number variables between 1 and 3: 2
     Type it variable: p
     Type it variable: q
-    |================|========|
+     =========================
     |  PREPOSITIONS  | INPUTS |
     |================|========|
     |Conjuction      |   ^    |
-    |dijuntion       |   v    |
+    |Dijuntion       |   v    |
     |Implication     |   >    |
-    |biconditional   |   b    |
-    |================|========|
+    |Biconditional   |   b    |
+    |Negation        |   ~    |
+     ========================= 
     Type the expresson: ((p>q)vp)
     Exit: Truth table 2^2
     ==================
